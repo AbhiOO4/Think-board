@@ -1,23 +1,36 @@
 import dotenv from "dotenv";
 
-dotenv.config({quiet: true})
-
 import express from 'express';
-
-const app = express()
 
 import notesRoutes from './routes/notesRoutes.js';
 
 import connectDB from './config/db.js';
 
-app.use(express.json());
+import rateLimiter from './middleware/rateLimiter.js'
 
-connectDB()
+import cors from 'cors'
+
+dotenv.config({quiet: true})
+const app = express()
+
+//middlewares
+
+app.use(cors({
+    origin: "http://localhost:5173"
+}))
+app.use(express.json());
+app.use(rateLimiter)
+
 
 //routes
 app.use('/api/notes', notesRoutes)
 
-
-app.listen(process.env.PORT, () => {
-    console.log("Server started at port 3000")
+//connect to db function
+connectDB().then(() => {
+    app.listen(process.env.PORT, () => {
+        console.log("Server started at port 3000")
+    })
 })
+
+
+
