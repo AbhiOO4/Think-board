@@ -3,6 +3,7 @@ import React from 'react'
 import {PlusIcon} from 'lucide-react'
 import {Link} from 'react-router'
 
+
 const Navbar = () => {
   return (
     <header className='bg-base-300 border-b border-base-content/10'>
