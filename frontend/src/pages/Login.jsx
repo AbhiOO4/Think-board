@@ -49,7 +49,7 @@ function Login() {
         }
     }
     return (
-            <div className='min-h-screen flex items-center justify-center backgroundImage'>
+            <div className='min-h-screen flex items-center justify-center backgroundImage px-2'>
                 <div className='card bg-base-100 w-96 shadow-xl p-3'>
                     <form onSubmit={handleSubmit} className="w-full max-w-md p-6 rounded-lg shadow">
                         <label className="input input-bordered flex items-center gap-2 mb-5">

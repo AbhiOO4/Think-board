@@ -29,7 +29,7 @@ const NoteCard = ({ note, setNotes }) => {
 
     return (
         <Link to={`/note/${note._id}`}>
-            <div className="card border-t-8 border-2 border-primary bg-base-100 w-96 shadow-sm">
+            <div className="card border-t-8 border-2 border-primary bg-base-100 w-96 shadow-sm mx-2">
                 <div className="card-body">
                     <h2 className="card-title text-base-content">{note.title}</h2>
                     {/* <p>{note.content}</p> */}
