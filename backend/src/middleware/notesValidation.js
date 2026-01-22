@@ -15,7 +15,6 @@ export const notesValidate = (req, res, next) => {
 }
 
 export const editNoteValidate = (req, res, next) => {
-  console.log(req.body)
   const schema = Joi.object({
     title: Joi.string().min(1).max(60),
     content: Joi.string().min(1)

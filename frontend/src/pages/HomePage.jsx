@@ -60,7 +60,7 @@ const HomePage = () => {
         {notes.length === 0 && !isRateLimited && <EmptyNotes/>}
         {notes.length > 0 && !isRateLimited && (
           <div className='flex items-center justify-center'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6'>
               {notes.map(note => {
                 return (
                   <NoteCard key={note._id} note={note} setNotes={setNotes}/>
